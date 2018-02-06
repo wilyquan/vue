@@ -90,6 +90,8 @@ const store = () => new Vuex.Store({
 //				commit('setLang', resLang.data)
 //				commit('setDocVersion', resLang.data.docVersion)
 //				if (state.first){
+//					localStorage.setItem("token", 'my token');
+//					console.log(localStorage.getItem("token"));
 					const resMenu = await axios("http://localhost:8000/menu/nuxt");
 					commit('setMenus', resMenu.data);
 //				}

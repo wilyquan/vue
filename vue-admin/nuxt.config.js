@@ -5,7 +5,8 @@ module.exports = {
 	
 	router:{
 		mode: 'hash',
-		linkActiveClass: 'cc-active-link'
+		linkActiveClass: 'cc-active-link',
+		middleware: 'user-agent'
 	},
 
 	/*
@@ -73,6 +74,7 @@ module.exports = {
 	 ** Build configuration
 	 */
 	build: {
+		vendor:['external_library'],
 		/*
 		 ** You can extend webpack config here
 		 */
