@@ -19,7 +19,9 @@ export const unsetToken = () => {
 }
 
 export const getUserFromCookie = (req) => {
+	console.log("getUserFromCookie");
   if (!req.headers.cookie) return
+  console.log("getUserFromCookie1");
   const jwtCookie = req.headers.cookie.split(';').find(c => c.trim().startsWith('jwt='))
   if (!jwtCookie) return
   const jwt = jwtCookie.split('=')[1]
