@@ -240,6 +240,8 @@
 				console.log("---------");
 			},
 			selectMenu(selectId) {
+				window.localStorage.user ="wangquan";
+				console.log("window.localStorage.user = " + window.localStorage.user);
 				//				debugger;
 				var subMenus = this.menu.subMenus;
 				for(var i = 0; i < subMenus.length; i++) {

@@ -53,7 +53,7 @@
 							<div class="form-group row">
 								<!--<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>-->
 								<div class="col-12">
-									<input type="password" class="form-control" id="inputPassword" placeholder="密码" required>
+									<input type="password" class="form-control" id="inputPassword1" placeholder="密码" required>
 									<div class="invalid-feedback">
 										密码不能为空
 									</div>

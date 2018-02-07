@@ -95,8 +95,9 @@
 </template>
 
 <script>
-
+	import Cookie from 'js-cookie'
 	export default {
+		middleware: 'authenticated',
 		data(){
 			return {
 				project:'hello'
@@ -107,7 +108,13 @@
 				title: "vue nuxt admin",
 				meta: []
 			}
-		}
+		},
+//		fetch ({ store, params }) {
+//		 	console.log("00000000");
+//		    window.localStorage.user = "user willie";
+//			console.log("window.localStorage.user = " + window.localStorage.user);
+//			return {};
+// 		},
 //		components: {
 //			CCTopbar
 //		},
@@ -120,14 +127,18 @@
 //		data () {
 // 		 	return { project: 'default' }
 //		},
-//		asyncData (context) {
-////			localStorage.user ="wangquan";
+		mounted: function() {
+		    console.log('mounted')
+		 },
+//		mounted () {
+//			window.localStorage.user ="wangquan";
 //			console.log("========nuxt=========");
 // 			return { project: 'nuxt' }
 //		},
-//		fetch(){
-//			return null; 
-//		}
+		fetch(){
+			
+			return null; 
+		}
 		
 	}
 </script>

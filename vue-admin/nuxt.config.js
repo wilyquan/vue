@@ -2,11 +2,11 @@ const pkg = require('./package')
 
 module.exports = {
 	mode: 'universal',
-	
-	router:{
+
+	router: {
 		mode: 'hash',
 		linkActiveClass: 'cc-active-link',
-		middleware: 'user-agent'
+		middleware: ['user-agent', 'check-auth', ]
 	},
 
 	/*
@@ -44,9 +44,9 @@ module.exports = {
 	/*
 	 ** Global CSS
 	 */
-//	css: [
-//		'~/static/css/bootstrap.css'
-//	],
+	//	css: [
+	//		'~/static/css/bootstrap.css'
+	//	],
 
 	/*
 	 ** Plugins to load before mounting the App
@@ -74,7 +74,7 @@ module.exports = {
 	 ** Build configuration
 	 */
 	build: {
-		vendor:['external_library'],
+//		vendor: ['external_library'],
 		/*
 		 ** You can extend webpack config here
 		 */

@@ -1,22 +1,10 @@
 import Vuex from 'vuex'
 import axios from 'axios'
-import menu from './modules/menu'
-
-
-//const store = () => new Vuex.Store({
-//actions,
-//getters,
-//modules: {
-//  menu
-//}
-//})
-
 
 const store = () => new Vuex.Store({
-	getters,
 	state: {
 		count: 2,
-		user: "www",
+		user: null,
 		isAuthenticated: false,
 		menus: null,
 		first: true
@@ -117,16 +105,5 @@ const store = () => new Vuex.Store({
 		}
 	}
 })
-
-export const getters = {
-  isAuthenticated (state) {
-  	console.log("getters isAuthenticated");
-    return !!state.user
-  },
-  loggedUser (state) {
-    return state.user
-  }
-}
-
 
 export default store
