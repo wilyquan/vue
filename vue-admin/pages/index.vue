@@ -96,8 +96,9 @@
 
 <script>
 	import Cookie from 'js-cookie'
+	import { authenticated } from '~/utils/auth'
 	export default {
-		middleware: 'authenticated',
+//		middleware: 'authenticated',
 		data(){
 			return {
 				project:'hello'
@@ -127,8 +128,12 @@
 //		data () {
 // 		 	return { project: 'default' }
 //		},
-		mounted: function() {
-		    console.log('mounted')
+		mounted(){
+			//页面渲染之后，该方法将被调用。
+		    console.log('mounted');
+		    //dang
+//		    authenticated(this.$router);
+			authenticated(this.$router);
 		 },
 //		mounted () {
 //			window.localStorage.user ="wangquan";

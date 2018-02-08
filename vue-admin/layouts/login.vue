@@ -131,6 +131,11 @@
 		data() {
 			return {};
 		},
+		mounted() {
+			console.log("hhhhhh");
+			window.localStorage.user="wangquan";
+			console.log("window.localStorage.user = " + window.localStorage.user)
+		},
 		head: {
 			title: "后台管理系统-登陆",
 			meta: [{

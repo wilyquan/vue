@@ -16,7 +16,7 @@ const store = () => new Vuex.Store({
 	getters,
 	state: {
 		count: 2,
-		user: "www",
+		user: "wangquan",
 		isAuthenticated: false,
 		menus: null,
 		first: true
@@ -106,6 +106,8 @@ const store = () => new Vuex.Store({
 //				if (state.first){
 //					localStorage.setItem("token", 'my token');
 //					console.log(localStorage.getItem("token"));
+					req.session.userinfo = "www";
+					console.log(req.session.userinfo);
 					const resMenu = await axios("http://localhost:8000/menu/nuxt");
 					commit('setMenus', resMenu.data);
 //				}

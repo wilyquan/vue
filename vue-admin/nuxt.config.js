@@ -74,7 +74,8 @@ module.exports = {
 	 ** Build configuration
 	 */
 	build: {
-//		vendor: ['external_library'],
+		vendor: ['jquery'],
+		
 		/*
 		 ** You can extend webpack config here
 		 */

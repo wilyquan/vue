@@ -1,4 +1,4 @@
-import { getUserFromCookie, getUserFromLocalStorage } from '~/utils/auth'
+//import { getUserFromCookie, getUserFromLocalStorage } from '~/utils/auth'
 
 export default function({
 	isServer,
@@ -8,8 +8,8 @@ export default function({
 	// If nuxt generate, pass this middleware
 	console.log("isServer = " + isServer);
 	console.log("======================");
-	debugger;
-	if(isServer && !req) return
-	const loggedUser = isServer ? getUserFromCookie(req) : getUserFromLocalStorage()
+//	debugger;
+//	if(isServer && !req) return
+//	const loggedUser = isServer ? getUserFromCookie(req) : getUserFromLocalStorage()
 //	store.commit('SET_USER', loggedUser)
 }

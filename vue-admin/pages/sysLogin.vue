@@ -1,6 +1,5 @@
 <template>
 	<div>
-
 	</div>
 </template>
 
@@ -9,14 +8,17 @@
 	export default {
 		layout: 'login',
 		middleware: 'anonymous',
-		mounted() {
-			console.log("hhhhhh");
-			unsetToken();
+		data() {
+			return {title : 'login page'}
 		},
+		
 		asyncData({
 			req,
-			params
+			params,
+			isServer,
+			isClient
 		}) {
+			console.log("===sysLogin page asyncData===================" + isServer + " client = " + isClient);
 //			window.localStorage.user = "wangquan";
 //			console.log("======================");
 //			console.log(window.localStorage.user);

@@ -155,6 +155,9 @@
 		data() {
 			return {};
 		},
+		mounted() {
+			
+		},
 		head: {
 			title: "后台管理系统",
 			meta: [{
