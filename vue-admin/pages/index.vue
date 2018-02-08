@@ -98,7 +98,7 @@
 	import Cookie from 'js-cookie'
 	import { authenticated } from '~/utils/auth'
 	export default {
-//		middleware: 'authenticated',
+		middleware: 'authenticated',
 		data(){
 			return {
 				project:'hello'
@@ -133,7 +133,7 @@
 		    console.log('mounted');
 		    //dang
 //		    authenticated(this.$router);
-			authenticated(this.$router);
+//			authenticated(this.$router);
 		 },
 //		mounted () {
 //			window.localStorage.user ="wangquan";

@@ -1,6 +1,6 @@
 <template>
-	<div>
-	</div>
+	<div></div>
+
 </template>
 
 <script>
@@ -9,9 +9,11 @@
 		layout: 'login',
 		middleware: 'anonymous',
 		data() {
-			return {title : 'login page'}
+			return {
+				title: 'login page'
+			}
 		},
-		
+
 		asyncData({
 			req,
 			params,
@@ -19,10 +21,10 @@
 			isClient
 		}) {
 			console.log("===sysLogin page asyncData===================" + isServer + " client = " + isClient);
-//			window.localStorage.user = "wangquan";
-//			console.log("======================");
-//			console.log(window.localStorage.user);
-//			console.log("hhhhhh")
+			//			window.localStorage.user = "wangquan";
+			//			console.log("======================");
+			//			console.log(window.localStorage.user);
+			//			console.log("hhhhhh")
 		},
 	}
 </script>

@@ -4,7 +4,7 @@
 			<div class="d-flex justify-content-center">
 				<div class="topbar-content topbar-items">
 					<div class="d-flex flex-row justify-content-end nav cc-nav">
-						<a class="nav-link flaticon-piggy-bank" href="#">你好，退出</a>
+						<a class="nav-link flaticon-piggy-bank" href="script:;" v-on:click="logout()">你好，退出</a>
 						<div class="nav-item">
 							<a class="nav-link" href="#"><img src="/img/common/ico_docu.png" class="nav-item-icon" />开发文档</a>
 						</div>
@@ -258,6 +258,19 @@
 					}
 					//					debugger;
 
+				}
+			},
+			async logout() {
+				try {
+					console.log("logout = " + sessionStorage.getItem("authUser"))
+		
+					await this.$store.dispatch('logout')
+					sessionStorage.setItem("authUser", null)
+					console.log("logout122 = " + sessionStorage.getItem("authUser"))
+					this.$router.replace("../sysLogin")
+				} catch(e) {
+					console.log("exception = " + e.message)
+					this.formError = e.message
 				}
 			}
 		}

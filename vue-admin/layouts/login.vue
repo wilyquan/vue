@@ -40,11 +40,11 @@
 						后台管理系统登陆
 					</div>
 					<div class="card-body">
-						<form class="needs-validation" novalidate>
+						<form class="needs-validation" novalidate @submit.prevent="login">
 							<div class="form-group row">
 								<!--<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>-->
 								<div class="col-12">
-									<input type="text" class="form-control" id="inputPassword" placeholder="用户名" required>
+									<input type="text" class="form-control" id="inputPassword" v-model="formUsername" placeholder="用户名" required>
 									<div class="invalid-feedback">
 										用户名称不能为空
 									</div>
@@ -53,7 +53,7 @@
 							<div class="form-group row">
 								<!--<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>-->
 								<div class="col-12">
-									<input type="password" class="form-control" id="inputPassword1" placeholder="密码" required>
+									<input type="password" class="form-control" id="inputPassword1" v-model="formPassword" placeholder="密码" required>
 									<div class="invalid-feedback">
 										密码不能为空
 									</div>
@@ -62,7 +62,7 @@
 							<button class="btn btn-primary btn-block" type="submit" style="background:#44b549; border-color: #44b549;">提交</button>
 						</form>
 						<!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
-
+						<p class="error" v-if="formError">{{ formError }}</p>
 					</div>
 				</div>
 			</div>
@@ -129,11 +129,15 @@
 			Logo
 		},
 		data() {
-			return {};
+			return {
+				formError: null,
+				formUsername: '',
+				formPassword: ''
+			};
 		},
 		mounted() {
 			console.log("hhhhhh");
-			window.localStorage.user="wangquan";
+			window.localStorage.user = "wangquan";
 			console.log("window.localStorage.user = " + window.localStorage.user)
 		},
 		head: {
@@ -152,9 +156,9 @@
 				}
 			],
 			script: [{
-				 src: 'js/jquery-1.9.1.min.js'
-			},{
-				 src: 'js/bootstrap.min.js'
+				src: 'js/jquery-1.9.1.min.js'
+			}, {
+				src: 'js/bootstrap.min.js'
 			}]
 		},
 		computed: {
@@ -236,6 +240,30 @@
 					}
 					//					debugger;
 
+				}
+			},
+			async login() {
+				try {
+					await this.$store.dispatch('login', {
+						username: this.formUsername,
+						password: this.formPassword
+					})
+					this.formUsername = ''
+					this.formPassword = ''
+					this.formError = null
+					console.log("async login() {")
+					debugger;
+					this.$router.replace('/')
+					console.log("this.$router.replace('/')")
+				} catch(e) {
+					this.formError = e.message
+				}
+			},
+			async logout() {
+				try {
+					await this.$store.dispatch('logout')
+				} catch(e) {
+					this.formError = e.message
 				}
 			}
 		}
